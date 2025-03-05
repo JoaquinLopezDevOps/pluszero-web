@@ -1,11 +1,18 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/node",
       "config": {
-        "npmFlags": "--legacy-peer-deps"
+        "npmFlags": "--force"
       }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
     }
   ]
 }
